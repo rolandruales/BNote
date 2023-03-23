@@ -3,6 +3,7 @@ package com.example.mynotesapp.data
 import androidx.annotation.NonNull
 import androidx.room.*
 
+//database entities
 @Entity(tableName = "Notes")
 data class Note(
     @PrimaryKey(autoGenerate = true)
