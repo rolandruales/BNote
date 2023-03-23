@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.room.Room
+import com.example.mynotesapp.data.Note
+import com.example.mynotesapp.database.NotesDatabase
 import com.example.mynotesapp.databinding.ActivityMainBinding
 
 class NotesActivity : AppCompatActivity() {
@@ -23,6 +26,16 @@ class NotesActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         setupActionBarWithNavController(navController)
+
+//        val db = Room.databaseBuilder(
+//            applicationContext,
+//            NotesDatabase::class.java, "notes_database"
+//        )
+//            .allowMainThreadQueries().build()
+//        val noteDao = db.noteDao()
+//        binding.addItem.setOnClickListener {
+//            noteDao.insertNote(Note(0,"When","Awit", "June 2"))
+//        }
     }
 
     // enable back button when navigating fragments

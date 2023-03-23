@@ -27,14 +27,9 @@ class NotesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val navController = view.findNavController()
 
-        binding.notesButton.setOnClickListener {
-            //Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
-            val action = NotesFragmentDirections.actionNotesFragmentToContentFragment()
-            navController.navigate(action)
-        }
+
     }
 
     override fun onDestroyView() {

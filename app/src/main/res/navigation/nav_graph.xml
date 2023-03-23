@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.example.mynotesapp.NotesFragment"
-        android:label="fragment_notes"
-        tools:layout="@layout/fragment_notes" >
+        android:label="@string/notesFragment"
+        tools:layout="@layout/fragment_notes">
         <action
             android:id="@+id/action_notesFragment_to_contentFragment"
             app:destination="@id/contentFragment" />
@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/contentFragment"
         android:name="com.example.mynotesapp.ContentFragment"
-        android:label="fragment_content"
+        android:label="@string/contentFragment"
         tools:layout="@layout/fragment_content" />
 </navigation>
