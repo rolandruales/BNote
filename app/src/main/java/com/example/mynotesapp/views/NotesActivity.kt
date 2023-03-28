@@ -1,24 +1,28 @@
-package com.example.mynotesapp
+package com.example.mynotesapp.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.room.Room
-import com.example.mynotesapp.data.Note
+import com.example.mynotesapp.R
+import com.example.mynotesapp.viewmodel.NotesViewModel
+import com.example.mynotesapp.viewmodel.NotesViewModelFactory
 import com.example.mynotesapp.database.NotesDatabase
 import com.example.mynotesapp.databinding.ActivityMainBinding
+import com.example.mynotesapp.repository.NotesRepository
 
 class NotesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    lateinit var notesViewModel: NotesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
 
         //set notes fragment as nav host fragment in this activity
         val navHostFragment = supportFragmentManager
@@ -27,15 +31,17 @@ class NotesActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController)
 
-//        val db = Room.databaseBuilder(
-//            applicationContext,
-//            NotesDatabase::class.java, "notes_database"
-//        )
-//            .allowMainThreadQueries().build()
-//        val noteDao = db.noteDao()
-//        binding.addItem.setOnClickListener {
-//            noteDao.insertNote(Note(0,"When","Awit", "June 2"))
-//        }
+        try {
+            setContentView(binding.root)
+            val notesRepository = NotesRepository(NotesDatabase.getDatabase(this))
+            val noteViewModelProviderFactory = NotesViewModelFactory(notesRepository)
+            notesViewModel = ViewModelProvider(
+                this,
+                noteViewModelProviderFactory
+            )[NotesViewModel::class.java]
+        } catch (_: java.lang.Exception) {
+
+        }
     }
 
     // enable back button when navigating fragments

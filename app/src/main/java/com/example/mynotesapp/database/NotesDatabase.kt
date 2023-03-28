@@ -12,8 +12,8 @@ import com.example.mynotesapp.data.NoteDao
     version = 1
 )
 
-abstract class NotesDatabase: RoomDatabase() {
-    abstract fun noteDao(): NoteDao
+abstract class NotesDatabase : RoomDatabase() {
+    abstract fun getNoteDao(): NoteDao
 
     //check instance of the database if already running
     companion object {
@@ -24,7 +24,7 @@ abstract class NotesDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     NotesDatabase::class.java,
-                    "notes_database.db"
+                    "notes_database"
                 )
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()

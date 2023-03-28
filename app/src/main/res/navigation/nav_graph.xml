@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/notesFragment"
-        android:name="com.example.mynotesapp.NotesFragment"
+        android:name="com.example.mynotesapp.views.NotesFragment"
         android:label="@string/notesFragment"
         tools:layout="@layout/fragment_notes">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/contentFragment"
-        android:name="com.example.mynotesapp.ContentFragment"
+        android:name="com.example.mynotesapp.views.ContentFragment"
         android:label="@string/contentFragment"
         tools:layout="@layout/fragment_content" />
 </navigation>

@@ -1,17 +1,14 @@
-package com.example.mynotesapp.data
+package com.example.mynotesapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.mynotesapp.repository.NotesRepository
 
-class NotesViewModel(private val noteDao: NoteDao): ViewModel(){
-
-}
-
-class NotesViewModelFactory(private val noteDao: NoteDao): ViewModelProvider.Factory {
+class NotesViewModelFactory(private val repository: NotesRepository): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(NotesViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return NotesViewModel(noteDao) as T
+            return NotesViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

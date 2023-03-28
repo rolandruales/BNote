@@ -1,5 +1,6 @@
 package com.example.mynotesapp.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
@@ -8,12 +9,12 @@ import kotlinx.coroutines.flow.Flow
 interface NoteDao{
 
     //get all list in database
-    @Query("SELECT * FROM notes ORDER BY note_title ASC")
-    fun getAll(): Flow<List<Note>>
+    @Query("SELECT * FROM Notes")
+    fun getAllNotes(): LiveData<List<Note>>
 
     //insert or update existing record in db
     @Upsert
-    fun insertNote(note: Note)
+    fun upsert(note: Note)
 
     //delete item
     @Delete
