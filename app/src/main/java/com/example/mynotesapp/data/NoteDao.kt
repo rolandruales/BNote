@@ -14,7 +14,7 @@ interface NoteDao{
 
     //insert or update existing record in db
     @Upsert
-    fun upsert(note: Note)
+    suspend fun upsert(note: Note)
 
     //delete item
     @Delete

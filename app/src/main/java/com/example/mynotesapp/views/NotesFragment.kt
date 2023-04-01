@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mynotesapp.adapter.NotesAdapter
 import com.example.mynotesapp.data.*
@@ -37,9 +38,9 @@ class NotesFragment : Fragment() {
         val db = NotesDatabase.getDatabase(requireContext())
         val noteDao = db.getNoteDao()
 
-        binding.addItem.setOnClickListener {
-            noteDao.upsert(Note(0,"When","Awit", "June 2"))
-        }
+//        binding.addItem.setOnClickListener {
+//            noteDao.upsert(Note(0,"When","Awit", "June 2"))
+//        }
 
         binding.recViewNotes.apply {
             layoutManager = LinearLayoutManager(requireContext())
@@ -50,6 +51,11 @@ class NotesFragment : Fragment() {
         viewModel.getNotes().observe(viewLifecycleOwner) {list ->
             rvAdapter.submitList(list)
 
+        }
+
+        binding.fab.setOnClickListener {
+            val action = NotesFragmentDirections.actionNotesFragmentToAddNoteFragment()
+            findNavController().navigate(action)
         }
     }
 

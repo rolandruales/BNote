@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_notesFragment_to_contentFragment"
             app:destination="@id/contentFragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/contentFragment"
         android:name="com.example.mynotesapp.views.ContentFragment"
         android:label="@string/contentFragment"
         tools:layout="@layout/fragment_content" />
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.example.mynotesapp.views.AddNoteFragment"
+        android:label="Add note"
+        tools:layout="@layout/fragment_add_note" />
 </navigation>

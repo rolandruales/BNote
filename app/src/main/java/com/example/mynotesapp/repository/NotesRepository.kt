@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 
 class NotesRepository(private val db: NotesDatabase) {
 
-//    suspend fun upsert(item: Note) = db.noteDao().upsert(item)
+    suspend fun upsert(note: Note) = db.getNoteDao().upsert(note)
 //
 //    suspend fun delete(item: Note) = db.noteDao().deleteNote(item)
 //
@@ -17,9 +17,6 @@ class NotesRepository(private val db: NotesDatabase) {
     // Use this if parameter is database
     fun getNote() = db.getNoteDao().getAllNotes()
 
-    // DAO parameter
-//    fun getNotes(): Flow<List<Note>> {
-//        return noteDao.getAllNotes()
-//    }
+
 
 }

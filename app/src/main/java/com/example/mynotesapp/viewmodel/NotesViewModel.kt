@@ -4,13 +4,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.mynotesapp.data.Note
 import com.example.mynotesapp.repository.NotesRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class NotesViewModel(private val notesRepository: NotesRepository) : ViewModel(){
 
 
-//    fun upsert(item: Note) = CoroutineScope(Dispatchers.IO).launch {
-//        notesRepository.upsert(item)
-//    }
+    fun upsert(item: Note) = CoroutineScope(Dispatchers.IO).launch {
+        notesRepository.upsert(item)
+    }
 //
 //    fun delete(item: Note) = CoroutineScope(Dispatchers.IO).launch {
 //        notesRepository.delete(item)
