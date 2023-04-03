@@ -10,12 +10,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mynotesapp.adapter.NotesAdapter
-import com.example.mynotesapp.data.*
-import com.example.mynotesapp.database.NotesDatabase
 import com.example.mynotesapp.databinding.FragmentNotesBinding
 import com.example.mynotesapp.viewmodel.NotesViewModel
 
 class NotesFragment : Fragment() {
+
 
     private var _binding: FragmentNotesBinding? = null
     private val binding get() = _binding!!
@@ -33,26 +32,25 @@ class NotesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController = view.findNavController()
-
-        val db = NotesDatabase.getDatabase(requireContext())
-        val noteDao = db.getNoteDao()
-
-//        binding.addItem.setOnClickListener {
-//            noteDao.upsert(Note(0,"When","Awit", "June 2"))
-//        }
 
         binding.recViewNotes.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            rvAdapter = NotesAdapter()
+
+            // adapter's parameter is the navigation when item in recyclerview is clicked
+            // passing the id of the item as parameter
+            rvAdapter = NotesAdapter{
+                val action = NotesFragmentDirections.actionNotesFragmentToContentFragment(it.id)
+                this.findNavController().navigate(action)
+            }
             adapter = rvAdapter
         }
 
+        //observe the data from database and display data
         viewModel.getNotes().observe(viewLifecycleOwner) {list ->
             rvAdapter.submitList(list)
-
         }
 
+        // floating action button for adding a new note
         binding.fab.setOnClickListener {
             val action = NotesFragmentDirections.actionNotesFragmentToAddNoteFragment()
             findNavController().navigate(action)

@@ -21,7 +21,12 @@
         android:id="@+id/contentFragment"
         android:name="com.example.mynotesapp.views.ContentFragment"
         android:label="@string/contentFragment"
-        tools:layout="@layout/fragment_content" />
+        tools:layout="@layout/fragment_content" >
+        <!-- Send an argument from recyclerview to this fragment -->
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+    </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.example.mynotesapp.views.AddNoteFragment"
