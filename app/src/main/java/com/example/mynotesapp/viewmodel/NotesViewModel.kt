@@ -21,5 +21,9 @@ class NotesViewModel(private val notesRepository: NotesRepository) : ViewModel()
     fun getItemById(id: Int): LiveData<Note> {
         return notesRepository.retrieveItem(id)
     }
+
+    fun deleteNote(item: Note) = CoroutineScope(Dispatchers.IO).launch {
+        notesRepository.delete(item)
+    }
 }
 

@@ -4,31 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="15dp">
+    android:padding="15dp"
+    android:background="@color/item_recView"
+    android:layout_marginVertical="1dp">
 
     <TextView
         android:id="@+id/titleItemRecView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="title"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:layout_marginEnd="15dp"
         android:textSize="18sp"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/dateItemRecView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/descriptionItemRecView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="description"
         android:textSize="16sp"
+        android:layout_marginEnd="30dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/titleItemRecView"
         app:layout_constraintTop_toBottomOf="@+id/titleItemRecView" />
 
     <TextView
         android:id="@+id/dateItemRecView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="date"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxWidth="100dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -16,5 +16,7 @@ class NotesRepository(private val db: NotesDatabase) {
 
     fun retrieveItem(id: Int) = db.getNoteDao().getItemById(id)
 
+    suspend fun delete(note: Note) = db.getNoteDao().deleteNote(note)
+
 
 }

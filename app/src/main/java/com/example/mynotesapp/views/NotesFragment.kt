@@ -1,14 +1,16 @@
 package com.example.mynotesapp.views
 
 import android.os.Bundle
+import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mynotesapp.R
 import com.example.mynotesapp.adapter.NotesAdapter
 import com.example.mynotesapp.databinding.FragmentNotesBinding
 import com.example.mynotesapp.viewmodel.NotesViewModel
@@ -55,6 +57,7 @@ class NotesFragment : Fragment() {
             val action = NotesFragmentDirections.actionNotesFragmentToAddNoteFragment()
             findNavController().navigate(action)
         }
+
     }
 
 

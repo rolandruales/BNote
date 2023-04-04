@@ -2,6 +2,7 @@ package com.example.mynotesapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -37,6 +38,12 @@ class NotesAdapter(private val onItemClicked: (Note) -> Unit) :
         holder.itemView.setOnClickListener {
             onItemClicked(currentItem)
         }
+
+        holder.itemView.setOnLongClickListener {
+            Toast.makeText(holder.itemView.context, "Long pressed", Toast.LENGTH_SHORT).show()
+            true
+        }
+
         holder.bind(currentItem)
     }
 

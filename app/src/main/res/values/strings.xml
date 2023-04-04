@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">My notes app</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="notesFragment">Notes</string>
+    <string name="app_name">BNote</string>
+    <string name="notesFragment">BNotes</string>
     <string name="contentFragment">Content</string>
     <string name="add_title">Title</string>
     <string name="add_note_description">Description</string>
     <string name="date">Date</string>
+    <string name="delete_note">Delete</string>
 </resources>

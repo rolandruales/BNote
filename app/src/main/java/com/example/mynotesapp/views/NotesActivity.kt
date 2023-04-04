@@ -1,7 +1,12 @@
 package com.example.mynotesapp.views
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -23,7 +28,6 @@ class NotesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-
         //set notes fragment as nav host fragment in this activity
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainer) as NavHostFragment
@@ -40,12 +44,29 @@ class NotesActivity : AppCompatActivity() {
                 noteViewModelProviderFactory
             )[NotesViewModel::class.java]
         } catch (_: java.lang.Exception) {
-
         }
+
+        // handle back press in home fragment
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val dialog = AlertDialog.Builder(this@NotesActivity)
+                    .setTitle("Exit")
+                    .setMessage("Do you really want to exit?")
+                    .setPositiveButton("Yes") { _, _ ->
+                        finish()
+                    }
+                    .setNegativeButton("No") {_, _ ->
+
+                    }.create()
+                dialog.show()
+            }
+        })
     }
 
     // enable back button when navigating fragments
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
+
+
 }
