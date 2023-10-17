@@ -17,7 +17,7 @@
 <br>
 
 * Add a note - Add a note feature
-<ul>
+<ul list-style-type="none">
   <li>
     <img src ="https://user-images.githubusercontent.com/84693350/231753617-c5c781f9-4c01-4b8c-a4f6-8ba41000bf4a.jpg" width="275" height="525">
   </li>
