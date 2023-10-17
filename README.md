@@ -3,7 +3,7 @@
 
 <p align="center">* Home - List of all notes</p> 
 <ul>
-  <li>w</li>
+  <li>Test</li>
 </ul>
 <img src ="https://user-images.githubusercontent.com/84693350/231753574-6bde3ac8-ebd6-41a4-bd50-801015cef371.jpg" width="275" height="525">
 
