@@ -1,5 +1,5 @@
-# <p align="center">My simple note app</p>
-## <p align="center">Simple note application for android OS. </p>
+# My simple note app
+## Simple note application for android OS.
 <br>
 ### <p align="center">Technologies I used:</p>
 * CRUD operation to read, update, create and delete a note.
