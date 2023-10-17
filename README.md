@@ -9,7 +9,7 @@
 
 <br>
 <br>
-1. Home - List of all notes
+1. __Home__ - List of all notes
 <p align="center">
 <img src ="https://user-images.githubusercontent.com/84693350/231753574-6bde3ac8-ebd6-41a4-bd50-801015cef371.jpg" width="275" height="525">
 </p>
