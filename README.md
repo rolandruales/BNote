@@ -1,5 +1,6 @@
 # My simple note app
 ## <p align="center">Simple note application for android OS.</p>
+<br>
 ### <p align="center">Technologies I used:</p>
 * CRUD operation to read, update, create and delete a note.
 * MVVM design pattern.
