@@ -18,11 +18,11 @@
 
 * Add a note - Add a note feature
 <ul>
-  <li><p align="center">
-<img src ="https://user-images.githubusercontent.com/84693350/231753617-c5c781f9-4c01-4b8c-a4f6-8ba41000bf4a.jpg" width="275" height="525">
-</p></li>
-  <li><p align="center">
-<img src ="https://user-images.githubusercontent.com/84693350/231753623-338da1e9-ece0-4f6a-a00b-cbe4e75cbbfc.jpg" width="275" height="525">
-</p></li>
+  <li>
+    <img src ="https://user-images.githubusercontent.com/84693350/231753617-c5c781f9-4c01-4b8c-a4f6-8ba41000bf4a.jpg" width="275" height="525">
+  </li>
+  <li>
+    <img src ="https://user-images.githubusercontent.com/84693350/231753623-338da1e9-ece0-4f6a-a00b-cbe4e75cbbfc.jpg" width="275" height="525">
+  </li>
 </ul>
 
