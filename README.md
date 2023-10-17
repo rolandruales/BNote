@@ -7,11 +7,14 @@
 <img src ="https://user-images.githubusercontent.com/84693350/231753574-6bde3ac8-ebd6-41a4-bd50-801015cef371.jpg" width="275" height="525">
 </p>
 <br>
+<br>
 
 * Content - Display of a content of a note, includes date, title and desription.
 <p align="center">
 <img src ="https://user-images.githubusercontent.com/84693350/231753605-7ff692a8-5acf-44b0-a01e-93ac49c9492c.jpg" width="275" height="525">
 </p>
+<br>
+<br>
 
 * Add a note - Add a note feature
 <p align="center">
