@@ -1,5 +1,9 @@
 # My simple note app
-### <p align="center">Simple notes app using CRUD operation to read, update, create and delete also MVVM design pattern and Room Database.</p>
+## <p align="center">Simple note application for android OS.</p>
+### <p align="center">Technologies I used:</p>
+* CRUD operation to read, update, create and delete a note.
+* MVVM design pattern.
+* Room Database
 
 
 * Home - List of all notes
