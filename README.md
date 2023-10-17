@@ -1,5 +1,5 @@
-# My simple note app
-<p align="center">Simple notes app using CRUD operation to read, update, create and delete also MVVM design pattern and Room Database.</p>
+## My simple note app
+<p align="center"># Simple notes app using CRUD operation to read, update, create and delete also MVVM design pattern and Room Database.</p>
 
 * Home - List of all notes
 
