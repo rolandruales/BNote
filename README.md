@@ -1,4 +1,4 @@
-# My simple note app
+# <p align="center">My simple note app</p>
 ## <p align="center">Simple note application for android OS.</p>
 <br>
 ### <p align="center">Technologies I used:</p>
